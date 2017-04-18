@@ -51,13 +51,12 @@ app.use(async (ctx, next) => {
 
 // routes
 app.use(index.routes(), index.allowedMethods());
-app.use(users.routes(), users.allowedMethods());
 
-//添加格式化处理响应结果的中间件，在添加路由之前调用
-app.use(response_formatter);
+// 添加格式化处理响应结果的中间件，在添加路由之前调用
+// 仅对/api开头的url进行格式化处理
+app.use(response_formatter('^/api'));
 
 // router.use('/', index.routes(), index.allowedMethods());
-// router.use('/users', users.routes(), users.allowedMethods());
 router.use('/api', api.routes(), api.allowedMethods());
 
 app.use(router.routes(), router.allowedMethods());

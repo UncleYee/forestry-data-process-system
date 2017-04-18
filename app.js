@@ -14,7 +14,6 @@ const response_formatter = require('./middlewares/response_formatter');
 const logUtil = require('./utils/log_util');
 
 const index = require('./routes/index');
-const users = require('./routes/users');
 
 // error handler
 onerror(app);
@@ -41,7 +40,7 @@ app.use(async (ctx, next) => {
     // 记录响应日志
     ms = new Date() - start;
     logUtil.logResponse(ctx, ms);
-  } catch (err) {
+  } catch (error) {
     ms = new Date() - start;
     // 记录异常日志
     logUtil.logError(ctx, error, ms);

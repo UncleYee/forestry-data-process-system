@@ -15,4 +15,12 @@ router.get('/foo', async function (ctx, next) {
   });
 });
 
+router.get('/json', async (ctx, next) => {
+  await next();
+  ctx.body = {
+    code: 0,
+    message: 'success'
+  }
+});
+
 module.exports = router;

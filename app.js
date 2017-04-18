@@ -5,6 +5,11 @@ const json = require('koa-json');
 const onerror = require('koa-onerror');
 const bodyparser = require('koa-bodyparser')();
 const logger = require('koa-logger');
+var router = require('koa-router')();
+// api
+const api = require('./routes/api');
+// response_formatter
+const response_formatter = require('./middlewares/response_formatter');
 // log 工具
 const logUtil = require('./utils/log_util');
 
@@ -47,5 +52,14 @@ app.use(async (ctx, next) => {
 // routes
 app.use(index.routes(), index.allowedMethods());
 app.use(users.routes(), users.allowedMethods());
+
+//添加格式化处理响应结果的中间件，在添加路由之前调用
+app.use(response_formatter);
+
+// router.use('/', index.routes(), index.allowedMethods());
+// router.use('/users', users.routes(), users.allowedMethods());
+router.use('/api', api.routes(), api.allowedMethods());
+
+app.use(router.routes(), router.allowedMethods());
 
 module.exports = app;

@@ -8,10 +8,12 @@ var app = require('../app');
 var debug = require('debug')('demo:server');
 var http = require('http');
 var fs = require('fs');
-var logConfig = require('../config/log_config');
 
 // 引入配置文件
 var config = require('../config');
+
+// 日志配置文件
+var logConfig = require('../config/log_config');
 
 /**
  * Get port from environment and store in Express.

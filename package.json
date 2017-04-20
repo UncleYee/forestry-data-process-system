@@ -9,6 +9,8 @@
     "start_koa": "bin/www"
   },
   "dependencies": {
+    "csv": "^1.1.1",
+    "csv-parse": "^1.2.0",
     "debug": "^2.6.3",
     "jade": "~1.11.0",
     "koa": "^2.2.0",
@@ -21,7 +23,10 @@
     "koa-static": "^3.0.0",
     "koa-views": "^5.2.1",
     "log4js": "^1.1.1",
-    "mongolass": "^2.4.5"
+    "moment": "^2.18.1",
+    "mongolass": "^2.4.5",
+    "mongoose": "^4.9.5",
+    "node-xlrd": "^0.2.4"
   },
   "devDependencies": {
     "babel-plugin-transform-async-to-generator": "^6.24.1",

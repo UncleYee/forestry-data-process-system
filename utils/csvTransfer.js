@@ -1,5 +1,5 @@
 /**
- * 将 cvs文件中的日期转换成日期类型字符串
+ * 将 cvs 文件中的日期转换成日期类型字符串
  * 将 2015-06-29  19:32:18 转换成为 Mon Jun 29 2015 19:32:18 GMT+0800 (CST)
  * @author: 
  */
@@ -41,10 +41,10 @@ const write = () => {
     .pipe(out);
 }
 
-const asyncF = async function() {
+const AsyncTransTimeType = async function() {
   await read();
   write();
   console.log('write success');
 }
 
-asyncF();
+module.exports = AsyncTransTimeType;

@@ -12,6 +12,8 @@ const api = require('./routes/api');
 const response_formatter = require('./middlewares/response_formatter');
 // log 工具
 const logUtil = require('./utils/log_util');
+// mongodb
+const mongoose = require('./lib/mongo');
 
 const index = require('./routes/index');
 

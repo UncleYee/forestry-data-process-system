@@ -10,8 +10,7 @@ router.post('/getForestryInfoNew', async function(ctx, next) {
       ctx.body = result;
     })
     .catch(next);
-  
-  
+
 });
 
 router.post('/test', async function(ctx, next){

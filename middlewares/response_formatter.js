@@ -13,8 +13,8 @@ var response_formatter = (ctx) => {
     }
   } else {
     ctx.body = {
-      code: 0,
-      message: 'success'
+      code: 1,
+      message: 'No result'
     }
   }
 }
